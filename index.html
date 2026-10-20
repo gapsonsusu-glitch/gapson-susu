@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>GAPSON Susu</title>
+<meta name="theme-color" content="#0D5E4B">
+<meta name="description" content="GAPSON SUSU ENT: susu, loans, expenses and partner shares.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo" viewBox="0 0 64 64">
+    <rect width="64" height="64" rx="16" fill="#0D5E4B"/>
+    <g fill="#E0A526">
+      <rect x="30.5" y="5" width="3" height="6" rx="1.5"/><rect x="30.5" y="53" width="3" height="6" rx="1.5"/>
+      <rect x="5" y="30.5" width="6" height="3" rx="1.5"/><rect x="53" y="30.5" width="6" height="3" rx="1.5"/>
+      <rect x="30.5" y="5" width="3" height="6" rx="1.5" transform="rotate(45 32 32)"/><rect x="30.5" y="53" width="3" height="6" rx="1.5" transform="rotate(45 32 32)"/>
+      <rect x="5" y="30.5" width="6" height="3" rx="1.5" transform="rotate(45 32 32)"/><rect x="53" y="30.5" width="6" height="3" rx="1.5" transform="rotate(45 32 32)"/>
+    </g>
+    <circle cx="32" cy="32" r="18" fill="#E0A526"/>
+    <path d="M40.5 25.5A11 11 0 1 0 43 34H33" fill="none" stroke="#0D5E4B" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+<header class="top"><div class="wrap">
+  <svg class="logo" role="img" aria-label="GAPSON logo"><use href="#logo"/></svg>
+  <div class="brandname">GAPSON SUSU<small>Susu · Loans · Partners</small></div>
+  <span id="sync" class="sync">Starting…</span>
+</div></header>
+<main><div class="wrap" id="view"></div></main>
+<nav class="tabs" aria-label="Sections"><div class="wrap">
+  <button class="tab" data-tab="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></button>
+  <button class="tab" data-tab="customers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.6.8 2.6 2.5 3 5.2"/></svg><span>Customers</span></button>
+  <button class="tab pos" data-tab="pos"><div class="disc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div><span>Record</span></button>
+  <button class="tab" data-tab="loans"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6.5 9.5v5M17.5 9.5v5"/></svg><span>Loans</span></button>
+  <button class="tab" data-tab="partners"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M12 3a9 9 0 0 1 0 18M12 3a9 9 0 0 0 0 18"/><path d="M12 12h9"/></svg><span>Partners</span></button>
+</div></nav>
+<div id="overlay" hidden></div>
+<section id="sheet" hidden role="dialog" aria-modal="true"><div class="wrap"><div class="grab"></div><div id="sheetBody"></div></div></section>
+<div id="toast" hidden></div>
+
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+<script>
+if('serviceWorker' in navigator){ addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{})); }
+</script>
+</body>
+</html>
