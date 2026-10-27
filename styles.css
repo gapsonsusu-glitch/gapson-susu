@@ -1,4 +1,3 @@
-
 /* Layout: phone-first till app — top bar, one scrolling view, fixed bottom tab bar with a raised POS key. */
 :root{
   --bg:#F2F5F1; --surface:#FFFFFF; --sunk:#E6ECE6; --line:#D5DED6;
@@ -121,3 +120,24 @@ body.posonly .tabs{display:none}
 body.posonly main{padding-bottom:40px}
 .empty{padding:22px 14px;text-align:center;color:var(--muted);font-size:14px}
 @media (prefers-reduced-motion:no-preference){#sheet{animation:up .2s ease-out}@keyframes up{from{transform:translateY(30px);opacity:.6}to{transform:none;opacity:1}}}
+
+/* View-only partner: hide everything that records or changes */
+body.viewonly .wr, body.viewonly [data-tab=pos], body.viewonly [data-act=newCust], body.viewonly [data-act=pos], body.viewonly [data-act=pos-cash],
+body.viewonly [data-act=del], body.viewonly [data-act=editCust], body.viewonly [data-act=addCollector], body.viewonly [data-act=delCollector],
+body.viewonly [data-act=clearEx], body.viewonly #setForm button[type=submit]{display:none!important}
+body.viewonly .tabs .wrap{grid-template-columns:repeat(4,minmax(0,1fr))}
+
+/* Loans-only mode */
+body.loansmode .susu-only{display:none!important}
+body.loansmode #posRoot .seg{display:none}
+
+/* Smooth, quick navigation */
+button,a,.tab,.chip,.item,.kind,.key,.segb{touch-action:manipulation}
+.btn:active,.chip:active,.tab:active,button.item:active,.kind:active,.segb:active{transform:scale(.97)}
+.tab{transition:color .15s}
+@media (prefers-reduced-motion:no-preference){
+  #view.slide-l{animation:gpInL .18s ease-out}
+  #view.slide-r{animation:gpInR .18s ease-out}
+  @keyframes gpInL{from{opacity:.35;transform:translateX(22px)}to{opacity:1;transform:none}}
+  @keyframes gpInR{from{opacity:.35;transform:translateX(-22px)}to{opacity:1;transform:none}}
+}
