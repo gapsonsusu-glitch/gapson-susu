@@ -1,6 +1,6 @@
 // GAPSON offline worker: keeps the app on the phone so it opens with no internet.
 // Change VERSION each time you upload new app files, so phones fetch the update.
-const VERSION = 'gapson-v1';
+const VERSION = 'gapson-v7';
 const SHELL = ['./', 'index.html', 'styles.css', 'app.js', 'config.js', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png'];
 
 self.addEventListener('install', e => {
